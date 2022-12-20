@@ -1,0 +1,14 @@
+//Ensure that the machine does not have a graphical environment at launch:
+    ls /usr/bin/*session
+//Switch to other user:
+    su - username
+//Check UFW service:
+    sudo ufw status
+    sudo service ufw status
+//Check SSH service:
+    sudo service ssh status
+//Check the chosen operating system:
+    uname -v
+//Check that your user is in the groups "sudo" and "user42":
+    getent group sudo
+    getent group user42
