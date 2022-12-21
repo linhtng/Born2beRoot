@@ -12,3 +12,15 @@
 //Check that your user is in the groups "sudo" and "user42":
     getent group sudo
     getent group user42
+//Create a new user and show that it follows the password policy we have created.
+    sudo adduser name_user
+//Create a new group called "evaluating".
+    sudo addgroup evaluating
+//Check passwod policy
+    cat /etc/login.defs
+    cat /etc/pam.d/common-password
+//Verify newly-created user's password expiry information via:
+    sudo chage -l <username>
+//Modify hostname to replace your login with the evaluator's.
+    sudo vim /etc/hostname
+    sudo vim /etc/hosts
