@@ -24,3 +24,25 @@
 //Modify hostname to replace your login with the evaluator's.
     sudo vim /etc/hostname
     sudo vim /etc/hosts
+    sudo reboot
+//Check that all the partitions are as indicated by the subject.
+    lsblk
+//Check that sudo is installed.
+    which sudo
+    dpkg -s sudo
+//Shows the application of the rules imposed for sudo by the subject:
+    vim /etc/sudoers.d/sudo_config
+//Check that the UFW program is installed in the virtual machine and check that it works correctly.
+    dpkg -s ufw
+// List the active rules in UFW if the bonus part is not done, only the rule for port 4242 should appear.
+    sudo ufw status numbered
+//Create a new rule for port 8080. Check that it has been added to the active rules and then you can delete it.
+    sudo ufw allow 8080
+    sudo ufw delete num_rule
+//Change the execution time of the script from 10 minutes to 1.
+    crontab -u root -e
+    crontab -u root -l
+//Make the script stop executing when the server has started, but without modifying the script.
+    /etc/init.d/cron stop
+//Show how the script works by showing the code:
+    cat /usr/local/bin/monitoring.sh
