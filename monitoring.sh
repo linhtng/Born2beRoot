@@ -30,6 +30,7 @@ lvm_active=$(lsblk | grep "lvm" | awk '{if ($1) {print "yes";exit;} else {print 
 
 # TCP CONNECTIONS
 tcpc=$(ss -t | grep ESTAB | wc -l)
+tcpc=$(ss -s | grep "TCP:" | awk '{printf("%d\n"), $4}')
 
 # USER LOG
 ulog=$(users | wc -w)
